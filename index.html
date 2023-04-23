@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Weather App</h1>
-    <form id="search-form">
-      <input type="text" placeholder="Enter a city" id="search-input">
-      <button type="submit">Search</button>
-    </form>
-    <div class="current-weather">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <div class="border">
       <div class="weather-info">
-        <h2 id="city-state"></h2>
-        <p id="weather-description"></p>
-        <p id="temperature"></p>
-        <p id="wind-speed"></p>
+        <div class="location-info">
+          <h2 id="location">City, State</h2>
+          <div id="current-weather">
+            <div class="weather-icon"><img src="" alt=""></div>
+            <div class="weather-details">
+              <p id="temperature"></p>
+              <p id="description"></p>
+              <p id="wind-speed"></p>
+            </div>
+          </div>
+        </div>
+        <div class="forecast-info">
+          <h3>5 Day Forecast</h3>
+          <ul id="forecast"></ul>
+        </div>
       </div>
-      <div class="weather-icon">
-        <img id="icon" alt="">
+      <div class="buttons">
+        <form id="search-form">
+          <input type="text" placeholder="Enter a city" id="search-input">
+          <button type="submit">Search</button>
+        </form>
+        <button id="current-location-btn">Current Location</button>
       </div>
     </div>
-    <div class="forecast-container">
-      <h2>5 Day Forecast</h2>
-      <div class="forecast"></div>
-    </div>
-  </div>
-  <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
