@@ -132,3 +132,7 @@ input[type="submit"]:hover {
 .forecast .temp {
   color: var(--tertiary-color);
 }
+.container {
+  border: 1px heather gray;
+  padding: 10px;
+}
