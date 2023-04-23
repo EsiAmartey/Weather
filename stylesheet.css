@@ -8,102 +8,67 @@ body {
   padding: 0;
 }
 
-.container {
+.bordered-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid 'heather gray';
+  border: 1px solid #333;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h1 {
+.top-left {
+  flex-basis: 100%;
+  margin-bottom: 30px;
+}
+
+.bottom-right {
+  flex-basis: 100%;
+}
+
+h2 {
   font-size: 36px;
   margin: 0 0 10px 0;
 }
 
-form {
-  margin-bottom: 30px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-input[type="submit"] {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
-  background-color: #f39c12;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-  background-color: #e67e22;
-}
-
 /* Current weather styles */
 
-.current-weather {
+#current-weather {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 }
 
-.current-weather .weather-icon {
+.weather-icon {
   margin-right: 20px;
 }
 
-.current-weather .weather-icon img {
+.weather-icon img {
   max-width: 100px;
   max-height: 100px;
 }
 
-.current-weather .temperature {
+.temperature {
   font-size: 72px;
   font-weight: bold;
   margin: 0;
 }
 
-.current-weather .weather-description {
-  font-size: 24px;
+/* Bottom right styles */
+
+ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
-/* 5-day forecast styles */
-
-.forecast {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.forecast .day {
-  flex-basis: 20%;
-  margin-bottom: 20px;
+li {
   font-size: 18px;
-  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.forecast .weather-icon {
-  flex-basis: 20%;
-  margin-bottom: 20px;
-}
-
-.forecast .weather-icon img {
+#weather-icon {
   max-width: 80px;
   max-height: 80px;
-}
-
-.forecast .temp {
-  flex-basis: 20%;
-  margin-bottom: 20px;
-  font-size: 18px;
-  font-weight: bold;
 }
 
 /* Color scheme */
@@ -114,22 +79,18 @@ body {
   --tertiary-color: #f1c40f;
 }
 
-input[type="submit"] {
-  background-color: var(--primary-color);
-}
-
-input[type="submit"]:hover {
-  background-color: var(--secondary-color);
-}
-
-.current-weather .temperature {
+.temperature {
   color: var(--primary-color);
 }
 
-.forecast .day {
+#weather-icon {
   color: var(--primary-color);
 }
 
-.forecast .temp {
+li:first-child {
+  color: var(--primary-color);
+}
+
+li:last-child {
   color: var(--tertiary-color);
 }
