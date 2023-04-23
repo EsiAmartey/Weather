@@ -55,12 +55,12 @@ function displayWeatherCondition(response) {
       </div>
     `;
   }
+  
   let fahrenheitLink = document.querySelector("#fahrenheit-link");
   fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
   let celsiusLink = document.querySelector("#celsius-link");
   celsiusLink.addEventListener("click", convertToCelsius);
-
 }
 
 function searchCity(city) {
@@ -86,10 +86,15 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  temperature = Number(temperature);
+  temperature = temperature * 9 / 5 + 32;
+  temperatureElement.innerHTML = Math.round(temperature);
 
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
-searchCity("New York");
+  let forecastMaxElement = document.querySelectorAll(".weather-forecast-temperature strong");
+  forecastMaxElement.forEach(function (item) {
+    let temperature = item.innerHTML;
+    temperature = Number
