@@ -2,6 +2,12 @@ const apiKey = "656f173395c28506763a3e9d15a312ad";
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 const weatherInfo = document.getElementById("weather-info");
+const cityName = document.getElementById("city-name");
+const weatherIcon = document.getElementById("weather-icon");
+const temperature = document.getElementById("temperature");
+const description = document.getElementById("description");
+const humidity = document.getElementById("humidity");
+const windSpeed = document.getElementById("wind-speed");
 const forecastContainer = document.getElementById("forecast-container");
 const currentLocationBtn = document.getElementById("current-location-btn");
 
@@ -19,18 +25,16 @@ const getWeatherData = (city) => {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
     .then((response) => response.json())
     .then((data) => {
-      const { name, main, weather } = data;
+      const { name, main, weather, wind } = data;
       const { temp, humidity } = main;
       const { description, icon } = weather[0];
-      weatherInfo.innerHTML = `
-        <h2>Current Weather in ${name}</h2>
-        <div>
-          <img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}">
-          <p>${description}</p>
-        </div>
-        <p>Temperature: ${temp} &deg;C</p>
-        <p>Humidity: ${humidity}%</p>
-      `;
+      const { speed } = wind;
+      cityName.textContent = `Current Weather in ${name}`;
+      weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}">`;
+      temperature.textContent = `Temperature: ${temp} \u00B0C`;
+      description.textContent = `Weather: ${description}`;
+      humidity.textContent = `Humidity: ${humidity}%`;
+      windSpeed.textContent = `Wind Speed: ${speed} m/s`;
       getForecastData(data.coord);
     })
     .catch((error) => console.log(error));
@@ -43,13 +47,4 @@ const getForecastData = (coord) => {
     .then((data) => {
       const { daily } = data;
       let forecastHTML = "";
-      daily.slice(1, 6).forEach((day) => {
-        const { dt, weather, temp } = day;
-        const { description, icon } = weather[0];
-        const date = new Date(dt * 1000).toLocaleDateString("en-US", { weekday: "long" });
-        forecastHTML += `
-          <div class="forecast-item">
-            <h3>${date}</h3>
-            <img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}">
-            <p>${description}</p>
-            <p>High: ${temp.max} &deg;C</p>
+      daily.slice(1, 6
