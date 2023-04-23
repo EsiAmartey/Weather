@@ -12,10 +12,13 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #333;
+  border: 1px solid #D3D3D3'
   display: flex;
   flex-wrap: wrap;
+  border-radius: 10px;
 }
+
+
 
 .top-left {
   flex-basis: 100%;
