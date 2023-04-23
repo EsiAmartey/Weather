@@ -8,92 +8,98 @@ body {
   padding: 0;
 }
 
-.bordered-container {
+.container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #D3D3D3'
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
 }
 
-
-
-.top-left {
-  flex-basis: 100%;
-  margin-bottom: 30px;
-}
-
-.bottom-right {
-  flex-basis: 100%;
-}
-
-h2 {
-  font-size: 36px;
-  margin: 0 0 10px 0;
-}
-
-/* Current weather styles */
-
-#current-weather {
-  display: flex;
-  align-items: center;
-}
-
-.weather-icon {
-  margin-right: 20px;
-}
-
-.weather-icon img {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.temperature {
-  font-size: 72px;
-  font-weight: bold;
+h2, h3 {
   margin: 0;
 }
 
-/* Bottom right styles */
-
 ul {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-li {
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Current weather styles */
+
+.current-weather {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-#weather-icon {
+.current-weather .weather-icon {
+  margin-right: 20px;
+}
+
+.current-weather .weather-icon img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.current-weather .weather-details {
+  flex: 1;
+}
+
+.current-weather .city-state {
+  font-size: 36px;
+  margin: 0;
+}
+
+.current-weather .temperature {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.current-weather .weather-description {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* 5-day forecast styles */
+
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forecast .day {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.forecast .weather-icon {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+}
+
+.forecast .weather-icon img {
   max-width: 80px;
   max-height: 80px;
 }
 
-/* Color scheme */
-
-body {
-  --primary-color: #f39c12;
-  --secondary-color: #e67e22;
-  --tertiary-color: #f1c40f;
+.forecast .temp {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.temperature {
-  color: var(--primary-color);
+/* Extra weather info styles */
+
+.extra-info {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
-#weather-icon {
-  color: var(--primary-color);
-}
-
-li:first-child {
-  color: var(--primary-color);
-}
-
-li:last-child {
-  color: var(--tertiary-color);
-}
+.extra-info ul li {

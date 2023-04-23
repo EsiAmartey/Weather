@@ -6,20 +6,27 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <div class="bordered-container">
-    <div class="top-left">
-      <h2 id="city-state"></h2>
-      <div id="current-weather">
-        <div class="weather-icon"><img src="" alt="Weather icon"></div>
-        <div class="temperature"></div>
+  <div class="container">
+    <div class="weather-info">
+      <div class="current-weather">
+        <div class="weather-icon">
+          <img src="" alt="Weather icon">
+        </div>
+        <div class="weather-details">
+          <h2 class="city-state"></h2>
+          <p class="temperature"></p>
+          <p class="weather-description"></p>
+        </div>
       </div>
-    </div>
-    <div class="bottom-right">
-      <ul>
-        <li>Wind Speed: <span id="wind-speed"></span></li>
-        <li>Weather Description: <span id="weather-description"></span></li>
-        <li><img id="weather-icon" src="" alt="Weather icon"></li>
-      </ul>
+      <div class="forecast">
+        <ul class="forecast-list"></ul>
+      </div>
+      <div class="extra-info">
+        <ul>
+          <li><strong>Wind Speed:</strong> <span class="wind-speed"></span></li>
+          <li><strong>Weather Description:</strong> <span class="weather-description-small"></span></li>
+        </ul>
+      </div>
     </div>
   </div>
   <script src="index.js"></script>
