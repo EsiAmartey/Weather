@@ -12,6 +12,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  border: 1px solid 'heather gray';
 }
 
 h1 {
@@ -131,8 +132,4 @@ input[type="submit"]:hover {
 
 .forecast .temp {
   color: var(--tertiary-color);
-}
-.container {
-  border: 1px heather gray;
-  padding: 10px;
 }
