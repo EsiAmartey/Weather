@@ -1,0 +1,134 @@
+/* Global styles */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(10, 186, 230);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #f39c12;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #e67e22;
+}
+
+/* Current weather styles */
+
+.current-weather {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.current-weather .weather-icon {
+  margin-right: 20px;
+}
+
+.current-weather .weather-icon img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.current-weather .temperature {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.current-weather .weather-description {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* 5-day forecast styles */
+
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forecast .day {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.forecast .weather-icon {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+}
+
+.forecast .weather-icon img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.forecast .temp {
+  flex-basis: 20%;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Color scheme */
+
+body {
+  --primary-color: #f39c12;
+  --secondary-color: #e67e22;
+  --tertiary-color: #f1c40f;
+}
+
+input[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+.current-weather .temperature {
+  color: var(--primary-color);
+}
+
+.forecast .day {
+  color: var(--primary-color);
+}
+
+.forecast .temp {
+  color: var(--tertiary-color);
+}
