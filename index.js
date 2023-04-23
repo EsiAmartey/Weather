@@ -1,4 +1,4 @@
-function formatDate(timestamp) {
+function formatForecastDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -11,13 +11,13 @@ function formatDate(timestamp) {
 
   let dayIndex = date.getDay();
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
   ];
   let day = days[dayIndex];
 
@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city-header").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -45,7 +45,7 @@ function displayWeatherCondition(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
       <div class="col-2">
-        <h3>${formatDate(forecast.dt * 1000)}</h3>
+        <h3>${formatForecastDate(forecast.dt * 1000)}</h3>
         <img src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png" alt="" />
@@ -71,36 +71,4 @@ function handleSubmit(event) {
 
 function searchLocation(position) {
   let apiKey = "2980ff43226d67e53abfcdb6d457dcc8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
-}
-
-let dateElement = document.querySelector("#date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
-searchCity("Accra");
+  let apiUrl = `https://api.open
